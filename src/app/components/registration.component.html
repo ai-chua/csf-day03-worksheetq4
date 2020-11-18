@@ -1,0 +1,58 @@
+<div class="container">
+  <h1>High School Reunion Reg Form</h1>
+  <form action="" [formGroup]="reunionForm" (ngSubmit)="processForm()">
+    <label for="">
+      Name
+      <input type="text" formControlName="firstName">
+      <input type="text" formControlName="lastName">
+    </label>
+    
+    <br><br>
+    
+    <label for="">
+      Guest Name
+      <input type="text" formControlName="guestFirstName">
+      <input type="text" formControlName="guestLastName">
+    </label>
+    
+    <br><br>
+    
+    <label for="">
+      Phone Number
+      <input type="text" formControlName="phoneNumber">
+    </label>
+    
+    <br><br>
+    
+    <label for="">
+      Email
+      <input type="text" formControlName="email">
+    </label>
+    
+    <br><br>
+    
+    Which event will you be attending?<br>
+    <label formArrayName="eventAttending" *ngFor="let event of addAttendingCheckboxes.controls; let i = index" for="">
+      <input type="checkbox" [formControlName]="i"> {{eventArray[i].name}}
+    </label>
+    
+    <br><br>
+    
+    <label for="">
+      Would you like to preorder DVD?<br>
+      <input type="radio" value="yes" formControlName="preorderDvd">Yes
+      <input type="radio" value="no" formControlName="preorderDvd">No
+    </label>
+    
+    <br><br>
+    
+    <label for="">
+      Comments/Questions<br>
+      <textarea name="" formControlName="comments" id="" cols="30" rows="10"></textarea>
+    </label>
+    
+    <br><br>
+    
+    <button type="submit">Sign up!</button>
+  </form>
+</div>
